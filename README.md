@@ -7,6 +7,7 @@ This repository intentionally contains release-risk signals for testing Zadig AI
 - Unit test report contains failed test cases.
 - Test pass rate is below 90%.
 - Source code contains a few simple patterns for code scan demos.
+- `Dockerfile` builds a small HTTP service listening on port 8080.
 - `k8s/demo.yaml` can be imported as a Zadig YAML service for full workflow demos.
 
 ## Suggested Zadig Flow

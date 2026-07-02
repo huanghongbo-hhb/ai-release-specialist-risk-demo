@@ -1,9 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println(Greeting("zadig"))
+	http.HandleFunc("/", func(w http.ResponseWriter, _ *http.Request) {
+		_, _ = fmt.Fprintln(w, Greeting("zadig"))
+	})
+
+	log.Println("ai-release-specialist-risk-demo listening on :8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func Greeting(name string) string {
