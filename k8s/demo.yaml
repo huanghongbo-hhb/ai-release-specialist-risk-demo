@@ -16,11 +16,13 @@ spec:
     spec:
       containers:
         - name: ai-release-specialist-risk-demo
-          image: koderover.tencentcloudcr.com/koderover-demo/ai-release-specialist-risk-demo:latest
+          image: koderover.tencentcloudcr.com/koderover-demo/service1:latest
           imagePullPolicy: Always
+          command:
+            - /workspace/service1
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 20221
 ---
 apiVersion: v1
 kind: Service
@@ -35,4 +37,4 @@ spec:
   ports:
     - name: http
       port: 8080
-      targetPort: 8080
+      targetPort: 20221
